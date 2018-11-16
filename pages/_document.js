@@ -20,15 +20,16 @@ export default class MyDocument extends Document {
             href="https://cdn.pannellum.org/2.3/pannellum.css"
           />
           {this.props.styleTags}
-          {'<!-- Global site tag (gtag.js) - Google Analytics -->'}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129315878-1"></script>
-          {`<script>
-              window.dataLayer = window.dataLayer || [];
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-129315878-1"
+          />
+          <script dangerouslySetInnerHTML={{
+            __html: `(function(g, scriptType, configType, id){g.dataLayer = g.dataLayer || [];
               function gtag(){dataLayer.push(arguments); }
-              gtag('js', new Date());
-              gtag('config', 'UA-129315878-1');
-              </script>`}
-
+              gtag(scriptType, new Date());
+              gtag(configType, id);})(window, 'js' , 'config', 'UA-129315878-1');`
+          } } />
         </Head>
         <body>
           <Main />
