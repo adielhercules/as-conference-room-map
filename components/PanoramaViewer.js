@@ -120,6 +120,17 @@ export default class PanoramaViewer extends React.PureComponent {
           Loading...
         </div>
         <div id="panorama" />
+
+        <div className="credits">
+          Made with <span class="text-error">♥</span> by{' '}
+          <a href="https://twitter.com/adielhercules" target="_blank">
+            Adiel Hercules
+          </a>
+          . Photo by{' '}
+          <a href="https://twitter.com/ronyvas" target="_blank">
+            Rony Vásquez
+          </a>
+        </div>
       </div>
     );
   }

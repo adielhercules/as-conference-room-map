@@ -108,3 +108,11 @@ div.custom-tooltip:hover .tooltip-container:after {
   color: #fff;
   background-color: #000;
 }
+
+.credits {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  padding: 10px;
+  background: rgba(100%, 100%, 100%, 0.6);
+}
