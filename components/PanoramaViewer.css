@@ -1,0 +1,110 @@
+#panorama {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+}
+.custom-hotspot {
+  height: 50px;
+  width: 50px;
+  font-size: 28px;
+  color: #a20606;
+  text-align: center;
+  background-color: rgba(100%, 100%, 100%, 0.5);
+  border-radius: 50%;
+  line-height: 45px;
+  cursor: help;
+
+  transition: background-color 0.3s;
+}
+
+.custom-hotspot .icon {
+  transform: scale(0.8);
+  transition: all 0.3s;
+}
+
+.custom-hotspot:hover {
+  background-color: rgba(100%, 100%, 100%, 0.8);
+}
+
+.custom-hotspot:hover .icon {
+  transform: scale(1);
+}
+
+div.custom-tooltip .tooltip-container {
+  position: absolute;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  max-width: 200px;
+  padding: 5px 10px;
+  margin-left: -220px;
+  cursor: default;
+  min-width: 150px;
+  font-size: 20px;
+  line-height: 1;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-10px) scale(1);
+
+  transition: all 0.3s;
+}
+
+div.custom-tooltip .tooltip-container .tooltip-container-row {
+  font-style: normal;
+  display: block;
+  padding: 0 5px;
+  color: #434343;
+  font-size: 0.8em;
+}
+
+div.custom-tooltip .tooltip-container .tooltip-container-row:last-child {
+  font-size: 1.2em;
+  color: #000;
+}
+
+div.custom-tooltip.is-conference-room .tooltip-container {
+  transform: translateY(14px) scale(0.6);
+  opacity: 0.8;
+}
+
+div.custom-tooltip:hover .tooltip-container {
+  opacity: 1;
+  transform: translateY(0px) scale(1);
+}
+
+div.custom-tooltip:hover .tooltip-container:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+  bottom: -20px;
+  left: -10px;
+  margin: 0 50%;
+}
+
+.preloader {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+#loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 50px;
+  color: #fff;
+  background-color: #000;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "applaudo-conference-rooms",
+  "description": "Conference Room Map - 360 Viewer",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^7.0.0",
+    "normalize.css": "^8.0.1",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-pose": "^4.0.1",
+    "spectre.css": "^0.5.5",
+    "styled-components": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.8.0"
+  }
+}
