@@ -3,7 +3,7 @@
   "description": "Conference Room Map - 360 Viewer",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "export": "next export"
   },

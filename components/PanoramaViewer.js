@@ -116,7 +116,9 @@ export default class PanoramaViewer extends React.PureComponent {
   render() {
     return (
       <div>
-        <div className="loader" />
+        <div className="loader" id="loader">
+          Loading...
+        </div>
         <div id="panorama" />
       </div>
     );
