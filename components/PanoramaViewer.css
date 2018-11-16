@@ -116,3 +116,7 @@ div.custom-tooltip:hover .tooltip-container:after {
   padding: 10px;
   background: rgba(100%, 100%, 100%, 0.6);
 }
+
+.pnlm-about-msg {
+  opacity: 0;
+}
