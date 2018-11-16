@@ -15,9 +15,55 @@ export default class PanoramaViewer extends React.PureComponent {
       autoLoad: true,
       showControls: false,
       yaw: -100,
+      keyboardZoom: false,
+      disableKeyboardCtrl: true,
+      compass: false,
       hotSpots: this.getHotspots(),
     });
+
+    this.viewer.on('load', this.showMinimap);
+
+    this.yaw = this.viewer.getYaw() + 100;
+    this.updateMinimapRotation(this.yaw);
+    this.startUpdateMinimapRotation();
   }
+
+  componentWillUnmount() {
+    if (this.updateInterval) {
+      clearInterval(this.updateInterval);
+    }
+
+    this.viewer.off('load', this.showMinimap);
+  }
+
+  startUpdateMinimapRotation = () => {
+    this.updateInterval = setInterval(() => {
+      const yaw = this.viewer.getYaw() + 100;
+
+      if (yaw !== this.yaw) {
+        this.updateMinimapRotation(yaw);
+
+        this.yaw = yaw;
+      }
+    }, 100);
+  };
+
+  updateMinimapRotation = yaw => {
+    if (this.minimap) {
+      this.minimap.style.transform = `rotate(${yaw}deg) translateY(0px)`;
+    }
+  };
+
+  showMinimap = yaw => {
+    if (this.minimap) {
+      this.minimap.parentElement.style.transform = `translateY(0px)`;
+      this.minimap.parentElement.style.opacity = 0.8;
+    }
+
+    if (this.select) {
+      this.select.parentElement.style.opacity = 1;
+    }
+  };
 
   getHotspots = () =>
     [
@@ -113,6 +159,16 @@ export default class PanoramaViewer extends React.PureComponent {
     container.style.marginTop = -container.scrollHeight - 50 + 'px';
   };
 
+  setRotation = e => {
+    const value = e.target.value;
+
+    if ( this.viewer ) {
+      this.viewer.setYaw(Number(value));
+    }
+
+    this.select.value = '';
+  };
+
   render() {
     return (
       <div>
@@ -121,8 +177,37 @@ export default class PanoramaViewer extends React.PureComponent {
         </div>
         <div id="panorama" />
 
+        <div className="form-group jump-to">
+          <select
+            className="form-select"
+            onChange={this.setRotation}
+            ref={el => {
+              this.select = el;
+            }}>
+            <option value="">Pan to:</option>
+            {this.getHotspots().map(item => (
+              <option value={item.yaw} key={item.yaw}>
+                {item.createTooltipArgs.join(' - ')}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div
+          className="minimap"
+          style={{ backgroundImage: 'url(/static/minimap.png)' }}>
+          <div
+            className="minimap-position"
+            ref={el => {
+              this.minimap = el;
+            }}>
+            <i className="icon icon-arrow-up" />
+            <div className="minimap-camera" />
+          </div>
+        </div>
+
         <div className="credits">
-          Made with <span class="text-error">♥</span> by{' '}
+          Made with <span className="text-error">♥</span> by{' '}
           <a href="https://twitter.com/adielhercules" target="_blank">
             Adiel Hercules
           </a>

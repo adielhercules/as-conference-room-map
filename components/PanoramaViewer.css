@@ -118,5 +118,41 @@ div.custom-tooltip:hover .tooltip-container:after {
 }
 
 .pnlm-about-msg {
+  opacity: 0 !important;
+}
+
+.minimap {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 130px;
+  height: 100px;
+  background: #fff;
+  background-size: 130px 100px;
+  border: 2px solid #000;
+  pointer-events: none;
+  transition: all 0.3s;
   opacity: 0;
+  transform: translateY(100px);
+}
+
+.minimap .minimap-position {
+  position: relative;
+  top: 60px;
+  left: 50%;
+  width: 16px;
+  margin-top: -10px;
+  margin-left: -10px;
+  color: #ca2a2a;
+  transition: all 0.1s;
+  transform-origin: center center;
+}
+
+.jump-to {
+  position: fixed;
+  bottom: 110px;
+  right: 10px;
+  width: 130px;
+  opacity: 0;
+  transition: all 0.3s;
 }
