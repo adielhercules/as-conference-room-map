@@ -58,7 +58,7 @@ const Page = () => (
         value="Dagohah, Endor, Hoth, Tatooine & Coruscant"
       />
       <meta name="twitter:label2" value="Number of rooms" />
-      <meta name="twitter:data3" value="5 total" />
+      <meta name="twitter:data2" value="5 total" />
     </Head>
 
     <PanoramaViewer />
