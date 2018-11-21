@@ -27,7 +27,10 @@ const Page = () => (
         property="og:description"
         content="360 Viewer and Map of our main office conference rooms."
       />
-      <meta property="og:image" content="/static/minimap-preview.jpg" />
+      <meta
+        property="og:image"
+        content="https://as-conference-rooms.netlify.com/static/minimap-preview.jpg"
+      />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta
@@ -42,7 +45,10 @@ const Page = () => (
         property="twitter:description"
         content="360 Viewer and Map of our main office conference rooms."
       />
-      <meta property="twitter:image" content="/static/minimap-preview.jpg" />
+      <meta
+        property="twitter:image"
+        content="https://as-conference-rooms.netlify.com/static/minimap-preview.jpg"
+      />
     </Head>
 
     <PanoramaViewer />
