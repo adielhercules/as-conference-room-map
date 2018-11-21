@@ -49,6 +49,16 @@ const Page = () => (
         property="twitter:image"
         content="https://as-conference-rooms.netlify.com/static/minimap-preview.jpg"
       />
+      <meta
+        name="twitter:label1"
+        value="Names of the rooms (from left to right)"
+      />
+      <meta
+        name="twitter:data1"
+        value="Dagohah, Endor, Hoth, Tatooine & Coruscant"
+      />
+      <meta name="twitter:label2" value="Number of rooms" />
+      <meta name="twitter:data3" value="5 total" />
     </Head>
 
     <PanoramaViewer />
